@@ -21,7 +21,7 @@ def refine_prompt(base_prompt: str) -> str:
     Improves an image generation prompt using Gemini via LangChain.
     """
     template = ChatPromptTemplate.from_messages([
-        ("system", "You are a creative AI prompt engineer. Make the prompt vivid, detailed, and visually engaging. Include art style, lighting, and composition. Keep it under 50 words."),
+        ("system", "You are a creative AI prompt engineer. Make the prompt vivid, detailed, and visually engaging. Include art style, lighting, and composition. Like a meme image. Keep it under 50 words."),
         ("human", "{prompt}")
     ])
     chain = template | chat_model
@@ -54,8 +54,8 @@ def generate_daily_prompt(subject: str) -> str:
     """
     template = ChatPromptTemplate.from_messages([
         ("system", 
-         "You are a creative AI image prompt writer. "
-         "Generate ONE unique, vivid, and detailed image idea related to the given subject. "
+         "You are a creative AI meme image prompt writer. "
+         "Generate ONE unique, vivid, and detailed meme image idea related to the given subject. "
          "Avoid repeating past ideas. No text in image. Include art style, lighting, and composition. "
          "Keep under 50 words."
         ),
