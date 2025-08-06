@@ -17,7 +17,7 @@ def generate_image(prompt: str) -> str:
     Saves in 'output_images' folder with timestamp filename.
     """
     
-    if not api_key:
+    if not API_KEY:
         raise ValueError("❌ GEMINI_API_KEY not found in .env")
 
     print("🎨 Generating image with Gemini...")
