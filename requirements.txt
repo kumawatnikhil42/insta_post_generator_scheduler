@@ -8,4 +8,4 @@ torch
 diffusers
 transformers
 accelerate
-google-generativeai
+google-genai
