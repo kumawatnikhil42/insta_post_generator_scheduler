@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
-
+API_KEY = os.getenv("GEMINI_API_KEY")
+if not API_KEY:
+    raise ValueError("❌ GEMINI_API_KEY is missing. Check GitHub Secrets or .env")
 def generate_caption(image_prompt: str):
     """
     Generates ONE Instagram caption based on the given image description.
