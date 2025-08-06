@@ -1,0 +1,11 @@
+langgraph
+langchain
+langchain-google-genai
+python-dotenv
+Pillow
+instagrapi
+torch
+diffusers
+transformers
+accelerate
+google-generativeai

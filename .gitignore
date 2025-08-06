@@ -1,0 +1,11 @@
+# Ignore environment variables file
+.env
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore output images (optional if you don't want them in git)
+output_images/
+
+venv
