@@ -2,17 +2,18 @@ import os
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from config import GEMINI_API_KEY
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = GEMINI_API_KEY
 if not API_KEY:
     raise ValueError("❌ GEMINI_API_KEY is missing. Check GitHub Secrets or .env")
 # Create a shared Gemini chat model instance
 chat_model = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
     temperature=0.7,
-    google_api_key=os.getenv("GEMINI_API_KEY")
+    google_api_key=API_KEY
 )
 
 def refine_prompt(base_prompt: str) -> str:
