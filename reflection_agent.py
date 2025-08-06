@@ -5,13 +5,12 @@ from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Create a shared Gemini chat model instance
 chat_model = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
     temperature=0.7,
-    google_api_key=API_KEY
+    google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 def refine_prompt(base_prompt: str) -> str:
