@@ -7,7 +7,9 @@ from io import BytesIO
 from datetime import datetime
 
 load_dotenv()
-
+API_KEY = os.getenv("GEMINI_API_KEY")
+if not API_KEY:
+    raise ValueError("❌ GEMINI_API_KEY is missing. Check GitHub Secrets or .env")
 def generate_image(prompt: str) -> str:
     """
     Generate an image using Google's Gemini image generation model.
