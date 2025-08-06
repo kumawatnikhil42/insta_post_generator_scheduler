@@ -1,5 +1,6 @@
 from instagrapi import Client
 import os
+import json
 from dotenv import load_dotenv
 from config import IG_USER,IG_PASS
 
