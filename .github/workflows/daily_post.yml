@@ -23,6 +23,7 @@ jobs:
       - name: Run script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          IG_SESSION: ${{ secrets.IG_SESSION }}
           IG_USER: ${{ secrets.IG_USER }}
           IG_PASS: ${{ secrets.IG_PASS }}
         run: python main.py
