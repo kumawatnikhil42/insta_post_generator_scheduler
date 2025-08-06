@@ -14,6 +14,8 @@ def post_image(image_path, caption):
     if not session_data:
         raise ValueError("❌ IG_SESSION secret is missing.")
 
-    cl.load_settings(json.loads(session_data))
+    settings_dict = json.loads(session_data)
+
+    cl.set_settings(settings_dict) 
     cl.login(IG_USER, IG_PASS)
     cl.photo_upload(image_path, caption)
