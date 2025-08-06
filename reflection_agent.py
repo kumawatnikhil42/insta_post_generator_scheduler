@@ -5,7 +5,9 @@ from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
 
-
+API_KEY = os.getenv("GEMINI_API_KEY")
+if not API_KEY:
+    raise ValueError("❌ GEMINI_API_KEY is missing. Check GitHub Secrets or .env")
 # Create a shared Gemini chat model instance
 chat_model = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash-lite",
