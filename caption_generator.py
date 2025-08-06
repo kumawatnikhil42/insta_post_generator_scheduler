@@ -1,9 +1,10 @@
 import os
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
+from config import GEMINI_API_KEY
 
 load_dotenv()
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = GEMINI_API_KEY
 if not API_KEY:
     raise ValueError("❌ GEMINI_API_KEY is missing. Check GitHub Secrets or .env")
 def generate_caption(image_prompt: str):
@@ -12,7 +13,7 @@ def generate_caption(image_prompt: str):
     """
     llm = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash-lite",
-        google_api_key=os.getenv("GEMINI_API_KEY")
+        google_api_key=API_KEY
     )
     
     prompt = f"""
